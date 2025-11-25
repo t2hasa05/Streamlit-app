@@ -5,6 +5,7 @@ import mysql.connector
 from dotenv import load_dotenv
 import os
 import requests
+from streamlit_autorefresh import st_autorefresh
 
 load_dotenv()
 
@@ -58,7 +59,7 @@ def main():
 
     with tab2:
         st.header("Sää Oulussa")
-
+        st_autorefresh(interval=60000, key="weather_refresh")
         df_weather = hae_saadata()
         st.dataframe(df_weather[["city", "temperature", "description", "timestamp"]])
 
