@@ -6,8 +6,6 @@ __pycache__/
 
 .streamlit/secrets.toml
 
-.streamlit/config.toml
-
 .vscode/
 .idea/
 
